@@ -1,0 +1,11 @@
+{
+  "name": "typespec-custom-decorators",
+  "version": "1.0.0",
+  "type": "module",
+  "tspMain": "main.tsp",
+  "exports": {
+    ".": {
+      "tsp": "./main.tsp"
+    }
+  }
+}
