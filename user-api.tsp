@@ -26,6 +26,10 @@ scalar Bio extends string;
 @pattern("^\\+?[1-9]\\d{1,14}$", "Must be a valid international phone number")
 scalar PhoneNumber extends string;
 
+@minValue(0)
+@maxValue(150)
+scalar Age extends int32;
+
 enum UserRole {
   admin: "admin",
   user: "user",
@@ -45,6 +49,7 @@ model User {
   username: Username;
   firstName?: Name;
   lastName?: Name;
+  age?: Age;
   avatarUrl?: string;
   role: UserRole;
   status: UserStatus;
@@ -59,6 +64,7 @@ model CreateUserRequest {
   password: Password;
   firstName?: Name;
   lastName?: Name;
+  age?: Age;
   role?: UserRole = UserRole.user;
 }
 
@@ -67,6 +73,7 @@ model UpdateUserRequest {
   username?: Username;
   firstName?: Name;
   lastName?: Name;
+  age?: Age;
   avatarUrl?: string;
   role?: UserRole;
   status?: UserStatus;
